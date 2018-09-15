@@ -10,8 +10,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
 
     <title>Document</title>
@@ -26,9 +25,9 @@
                         <h1 class="display-5 col-sm-12">Poke Match</h1>
                     </div>
                 </div>
-                <div  class="container">
-                    <div  class="row">
-                        <div  id="instructions" class="col-sm-6">
+                <div class="container">
+                    <div class="row">
+                        <div id="instructions" class="col-sm-6">
                             <p class="lead">
                                 <p>1. Each Pokemon holds a secret number value. <br>
                                     2. Click a Pokemon to add it's value to your score! <br>
@@ -47,7 +46,7 @@
 
                                 <div class="col-lg-6">
                                     <h5> Userscore
-                                    <h1 id="userScore">0</h1>
+                                        <h1 id="userScore">0</h1>
                                     </h5>
 
                                 </div>
@@ -62,31 +61,34 @@
                     </div>
                 </div>
             </div>
-            <span> <div id="row1" class="row ">
-               <div id="crystal1" class="col-sm-3">
-                    <img id="pic" src="assets/bulb.jpg" alt="..." class="img-thumbnail">
-                </div>
-                <div id="crystal2" class="col-sm-3">
-                    <imG id="pic" src="assets/squirtle.jpg" alt="..." class="img-thumbnail">
-                </div>
-                <div id="crystal3" class="col-sm-3">
-                    <img id="pic" src="assets/char.png" alt="..." class="img-thumbnail">
-                </div>
-                <div id="crystal4" class="col-sm-3">
-                    <img id="pic" src="assets/pika.jpg" alt="..." class="img-thumbnail">
-                </div>
+            <span>
+                <div id="row1" class="row ">
+                    <div id="crystal1" class="col-sm-3">
+                        <img id="pic1" src="assets/bulb.jpg" alt="..." class="img-thumbnail">
+                    </div>
+                    <div id="crystal2" class="col-sm-3">
+                            <img id="pic2" src="assets/char.png" alt="..." class="img-thumbnail">
+                       
+                    </div>
+                    <div id="crystal3" class="col-sm-3">
+                            <imG id="pic3" src="assets/squirtle.jpg" alt="..." class="img-thumbnail">
+                    </div>
+                    <div id="crystal4" class="col-sm-3">
+                        <img id="pic4" src="assets/pika.jpg" alt="..." class="img-thumbnail">
+                    </div>
 
-            </div></span>
+                </div>
+            </span>
         </div>
     </div>
     <!--jumboend-->
-   
-  
+
+
     <script>
         count = 1
 
         onload = function () {
-            $("#crystal1").on("click", crystalGame.click1);
+            $("#crystal1").on("click", crystalGame.click1, WebkitAnimationPlayState = "running");
             $("#crystal2").on("click", crystalGame.click2);
             $("#crystal3").on("click", crystalGame.click3);
             $("#crystal4").on("click", crystalGame.click4);

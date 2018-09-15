@@ -34,13 +34,70 @@ body {
     opacity: .8;
 }
 
-#pic {
+.img-thumbnail {
     border-style: solid;
     border-color: #212529;
     border-width: 7px;
     border-radius: 10px;
     opacity: 1;
     }
+    @keyframes bulbosaur {
+        from {border-color: rgb(33, 37, 41);}
+        to {border-color:#308172;}
+        
+    }
+    #pic1{
+    border-color: rgb(33, 37, 41);
+    animation-name: bulbosaur;
+    animation-duration: .1s;
+    animation-iteration-count:6;
+    animation-direction: alternate;
+       }
+       @keyframes charmander {
+        from {border-color: rgb(33, 37, 41);}
+        to {border-color:#d87e58}
+        }
+       
+       #pic2{
+        border-color: rgb(33, 37, 41);
+        animation-name: charmander;
+        animation-duration: .1s;
+        animation-iteration-count:6;
+        animation-direction: alternate;
+           }
+        
+            @keyframes squirtle{
+                from {border-color: rgb(33, 37, 41);}
+                to {border-color:#97c8da;}
+                }
+           #pic3{
+            border-color: rgb(33, 37, 41);
+            animation-name: squirtle ;
+            animation-duration: .1s;
+            animation-iteration-count:6;
+            animation-direction: alternate;
+               }
+               @keyframes pikachu {
+                from {border-color:  rgb(33, 37, 41);}
+                to {border-color:#ddec32;}
+                }
+               #pic4{
+                border-color: rgb(33, 37, 41);
+                animation-name: pikachu;
+                animation-duration: .1s;
+                animation-iteration-count:6;
+                animation-direction: alternate;
+                   }
+     #crystal2 {color: #212529;
+       
+     }
+     #crystal3 {color: #212529;
+       
+        
+     }
+     #crystal4 { color: #212529;
+   
+       }
 @media screen and (max-width: 640px) {
 
 body {  background-attachment: fixed;
@@ -64,6 +121,7 @@ body {  background-attachment: fixed;
     margin-right: 0px;
     margin-left: 0px;
 }
+
 #crystal1 {
    width: 25%;
    padding: 1%;
