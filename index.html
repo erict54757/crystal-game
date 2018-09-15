@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="contain">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <h1 class="display-5 col-sm-12">Poke Match</h1>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p class="lead">
+                                <p>1. Each Pockemon holds a secret number value. <br>
+                                    2. Click a Pockemon to add it's value to your score! <br>
+                                    3. Match the number and win! <br>
+                                    4. Don't go over or you'll lose!</p>
+                        </div>
+
+
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h5>Random Number
+                                        <div id="randomNumberText"></div>
+                                    </h5>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <h5> Userscore
+                                    <h1 id="userScore">0</h1>
+                                    </h5>
+
+                                </div>
+
+
+                                <div class="col-sm-6">
+                                    <h4 id="wins">Wins: 0 </h4>
+                                    <h4 id="losses"> Losses: 0</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+                <div id="crystal1" class="col-sm-3">
+                    <img src="assets/bulb.jpg" alt="..." class="img-thumbnail border-5">
+                </div>
+                <div id="crystal2" class="col-sm-3">
+                    <img src="assets/squirtle.jpg" alt="..." class="img-thumbnail">
+                </div>
+                <div id="crystal3" class="col-sm-3">
+                    <img src="assets/char.png" alt="..." class="img-thumbnail">
+                </div>
+                <div id="crystal4" class="col-sm-3">
+                    <img src="assets/pika.jpg" alt="..." class="img-thumbnail">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--jumboend-->
+
+  
+    <script>
+        count = 1
+
+        onload = function () {
+            $("#crystal1").on("click", crystalGame.click1);
+            $("#crystal2").on("click", crystalGame.click2);
+            $("#crystal3").on("click", crystalGame.click3);
+            $("#crystal4").on("click", crystalGame.click4);
+        }
+
+        var randomNumber = Math.floor(Math.random() * 100 + 20)
+        var randomCrystal1 = Math.floor(Math.random() * 12 + 1)
+        var randomCrystal2 = Math.floor(Math.random() * 12 + 1)
+        var randomCrystal3 = Math.floor(Math.random() * 12 + 1)
+        var randomCrystal4 = Math.floor(Math.random() * 12 + 1)
+        var score = 0;
+        var losses = 0;
+        var wins = 0;
+        $("#randomNumberText").html("<h1>" + randomNumber + "</h1>");
+        console.log(randomNumber)
+
+
+        var crystalGame = {
+
+            reset: function () {
+                score = 0
+                randomNumber = Math.floor(Math.random() * 100 + 20)
+                randomCrystal1 = Math.floor(Math.random() * 12 + 1)
+                randomCrystal2 = Math.floor(Math.random() * 12 + 1)
+                randomCrystal3 = Math.floor(Math.random() * 12 + 1)
+                randomCrystal4 = Math.floor(Math.random() * 12 + 1)
+                $("#randomNumberText").html("<h1>" + randomNumber + "</h1>");
+                $("#userScore").html("<h1>" + score + "</h1>")
+                count++
+            },
+
+            lossWin: function () {
+                if ((count === 1) && (score === randomNumber)) {
+                    wins++
+                    $("#wins").html("<h3>Wins: " + wins + "</h3>")
+                    count = 0;
+                    setTimeout(crystalGame.reset, 2000);
+                    console.log(score)
+                }
+
+                if ((count === 1) && (score > randomNumber)) {
+
+                    losses++
+                    $("#losses").html("<h3>Losses: " + losses + "</h3>")
+                    count = 0
+                    setTimeout(crystalGame.reset, 2000);
+                }
+            },
+
+            click1: function () {
+                if (count === 1) {
+                    score = score + randomCrystal1;
+                    $("#userScore").html("<h1>" + score + "</h1>")
+                    console.log(score);
+                }
+                crystalGame.lossWin();
+            },
+
+            click2: function () {
+                if (count === 1) {
+                    score = score + randomCrystal2;
+                    $("#userScore").html("<h1>" + score + "</h1>")
+                    console.log(score);
+                }
+                crystalGame.lossWin();
+            },
+
+            click3: function () {
+                if (count === 1) {
+                    score = score + randomCrystal3;
+                    $("#userScore").html("<h1>" + score + "</h1>")
+                    console.log(score);
+                }
+                crystalGame.lossWin();
+            },
+
+            click4: function () {
+                if (count === 1) {
+                    score = score + randomCrystal4;
+                    $("#userScore").html("<h1>" + score + "</h1>")
+                }
+                crystalGame.lossWin();
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
