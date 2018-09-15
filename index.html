@@ -88,10 +88,11 @@
         count = 1
 
         onload = function () {
-            $("#crystal1").on("click", crystalGame.click1, WebkitAnimationPlayState = "running");
+            $("#crystal1").on("click", crystalGame.click1);
             $("#crystal2").on("click", crystalGame.click2);
             $("#crystal3").on("click", crystalGame.click3);
             $("#crystal4").on("click", crystalGame.click4);
+            
         }
 
         var randomNumber = Math.floor(Math.random() * 100 + 20)
