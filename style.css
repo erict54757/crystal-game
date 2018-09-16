@@ -46,9 +46,10 @@ body {
         to {border-color:#308172;}
         
     }
-    #pic1{
+    #pic1:active{
+    
     border-color: rgb(33, 37, 41);
-    animation-name: bulbosaur;
+    animation-name:bulbosaur;
     animation-duration: .1s;
     animation-iteration-count:6;
     animation-direction: alternate;
@@ -58,7 +59,7 @@ body {
         to {border-color:#d87e58}
         }
        
-       #pic2{
+       #pic2:active{
         border-color: rgb(33, 37, 41);
         animation-name: charmander;
         animation-duration: .1s;
@@ -70,7 +71,7 @@ body {
                 from {border-color: rgb(33, 37, 41);}
                 to {border-color:#97c8da;}
                 }
-           #pic3{
+           #pic3:active{
             border-color: rgb(33, 37, 41);
             animation-name: squirtle ;
             animation-duration: .1s;
@@ -81,23 +82,14 @@ body {
                 from {border-color:  rgb(33, 37, 41);}
                 to {border-color:#ddec32;}
                 }
-               #pic4{
+               #pic4:active{
                 border-color: rgb(33, 37, 41);
                 animation-name: pikachu;
                 animation-duration: .1s;
                 animation-iteration-count:6;
                 animation-direction: alternate;
                    }
-     #crystal2 {color: #212529;
-       
-     }
-     #crystal3 {color: #212529;
-       
-        
-     }
-     #crystal4 { color: #212529;
-   
-       }
+     
 @media screen and (max-width: 640px) {
 
 body {  background-attachment: fixed;
